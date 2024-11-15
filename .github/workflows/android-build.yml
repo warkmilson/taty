@@ -1,0 +1,36 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main  # This means the workflow will run when you push changes to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # This is the operating system GitHub Actions will use to build your app
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # This step fetches your code from the repository
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # We are using Node.js version 16 for building your app
+
+    - name: Install dependencies
+      run: |
+        npm install  # This installs all the dependencies (libraries, etc.) needed for your app
+        npx cap sync android  # Synchronize your Capacitor project to Android (Capacitor is a tool for building mobile apps)
+
+    - name: Build APK
+      run: |
+        npm run build --prod  # This builds your app for production
+        npx cap open android  # This prepares the Android app
+        ./gradlew assembleRelease  # This command actually builds the APK file
+
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: apk  # Name the artifact "apk"
+        path: android/app/build/outputs/apk/release/app-release.apk  # The location where the APK is saved
