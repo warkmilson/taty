@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2  # This step fetches your code from the repository
+      uses: actions/checkout@v3  # This step fetches your code from the repository
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '16'  # We are using Node.js version 16 for building your app
 
@@ -30,7 +30,7 @@ jobs:
         ./gradlew assembleRelease  # This command actually builds the APK file
 
     - name: Upload APK artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: apk  # Name the artifact "apk"
         path: android/app/build/outputs/apk/release/app-release.apk  # The location where the APK is saved
