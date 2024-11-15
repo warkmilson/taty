@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #00bcd4, #ff4081); /* Cool gradient background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Game Container */
+#game-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Title */
+h1 {
+    font-size: 32px;
+    color: #ffeb3b;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Button Style */
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Buttons */
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Slider Styling */
+input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    transition: all 0.3s ease;
+}
+
+input[type="range"]:hover {
+    background: #bbb;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff4081; /* Slider Thumb color */
+    transition: all 0.3s ease;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+    background: #ff00b3; /* Thumb color when active */
+}
+
+input[type="number"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 18px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+/* Pop-up Styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.popup p {
+    font-size: 18px;
+    color: #333;
+}
+
+.popup-close-button {
+    background-color: #ff4081; /* Pink color for close button */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.popup-close-button:hover {
+    background-color: #f50057; /* Darker pink for hover */
+}
+
+/* Balance Display */
+#balance {
+    font-size: 20px;
+    font-weight: bold;
+    margin-
+
+    
